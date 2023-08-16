@@ -1,0 +1,42 @@
+version: "3"
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: music-server
+    user: ${PUID:-1000}:${PGID:-1000}
+    ports:
+      - ${HTTP_PORT:-4533}:${APP_PORT:-4533}
+    restart: unless-stopped
+    env_file:
+      - .envrc
+    environment:
+      ND_CONFIGFILE: "${CONFIG_FILE_PATH:-/config/navidrome/navidrome.toml}"
+      ND_SCANSCHEDULE: 15m
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ""
+      ND_SCANINTERVAL: 15m
+      ND_SCANONSTART: true
+      TZ: America/New_York
+    volumes:
+      - "${DATA_PATH:-./data/navidrome/data}:/data"
+      - "${MUSIC_PATH:-./data/music}:/music:ro"
+      - "${CONFIG_PATH:-./config/navidrome}:/config/navidrome"
+  # nginx:
+  #   image: jc21/nginx-proxy-manager:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #     - "81:81"
+  #   volumes:
+  #     - ./data:/data
+  #     - ./letsencrypt:/etc/letsencrypt
+  #     - ./certificates:/etc/nginx/certs
+  # navidrome-playlist-generator:
+  #   container_name: navidrome-playlist-generator
+  #   image: ghcr.io/zibbp/navidrome-playlist-generator:master
+  #   volumes:
+  #     - /path/to/navidrome/data:/navidrome:ro
+  #     - /path/to/csvs:/csvs:ro
+  #     - /path/to/music:/music
