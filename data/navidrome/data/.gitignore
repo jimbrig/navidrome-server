@@ -1,0 +1,5 @@
+*
+!.gitignore
+!.gitattributes
+!navidrome.db
+!cache/

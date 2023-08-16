@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "MediaServer",
+  "image": "mcr.microsoft.com/devcontainers/python",
+  "forwardPorts": [3000],
+  "customizations": {
+    // Configure VSCode
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+      },
+      "extensions": [
+        "ms-python.python",
+        "GitHub.github-vscode-theme",
+        "GitHub.remotehub",
+        "bierner.markdown-preview-github-styles",
+        "ms-azuretools.vscode-docker",
+        "p1c2u.docker-compose",
+        "henriiik.docker-linter",
+        "VisualStudioExptTeam.vscodeintellicode"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/linode-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    }
+  }
+}

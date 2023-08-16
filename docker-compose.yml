@@ -9,14 +9,15 @@ services:
     restart: unless-stopped
     env_file:
       - .envrc
+      - "${CONFIG_PATH:-./config/navidrome}/navidrome.envrc"
     environment:
       ND_CONFIGFILE: "${CONFIG_FILE_PATH:-/config/navidrome/navidrome.toml}"
-      ND_SCANSCHEDULE: 15m
-      ND_LOGLEVEL: info
-      ND_SESSIONTIMEOUT: 24h
-      ND_BASEURL: ""
-      ND_SCANINTERVAL: 15m
-      ND_SCANONSTART: true
+      ND_LASTFM_APIKEY: "${LAST_FM_API_KEY}"
+      ND_LASTFM_SECRET: "${LAST_FM_API_SECRET}"
+      ND_SPOTIFY_ID: "${SPOTIFY_ID}"
+      ND_SPOTIFY_SECRET: "${SPOTIFY_SECRET}"
+      ND_SCANNER_EXTRACTOR: "taglib"
+
       TZ: America/New_York
     volumes:
       - "${DATA_PATH:-./data/navidrome/data}:/data"
