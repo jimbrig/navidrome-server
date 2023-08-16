@@ -1,0 +1,16 @@
+# .envrc Example:
+# Run: mv .envrc.example .envrc
+
+PUID=1000
+PGID=1000
+HTTP_PORT=4533
+APP_PORT=4533
+DATA_PATH=./data/navidrome/data
+MUSIC_PATH=./data/music
+CONFIG_FILE_PATH=./config/navidrome/navidrome.toml
+
+# Secrets
+LAST_FM_API_KEY=''
+LAST_FM_API_SECRET=''
+SPOTIFY_ID=''
+SPOTIFY_SECRET=''
