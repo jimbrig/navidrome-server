@@ -1,4 +1,6 @@
 # Mkdocs GitHub Action Workflow
+name: MkDocs
+
 on:
   workflow_dispatch:
   push:
