@@ -1,1 +1,9 @@
 beets
+
+mkdocs
+mkdocs-material
+mkdocs-material-extensions
+
+black
+flake8
+isort

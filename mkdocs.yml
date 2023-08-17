@@ -31,13 +31,13 @@ nav:
       - "Roadmap": "about/roadmap.md"
       - "Credits": "about/credits.md"
       - "Changelog": "about/changelog.md"
+      - "FAQ": "about/faq.md"
   - "Overview":
       - "overview/index.md"
-      - "Installation": "overview/overview/installation.md"
+      - "Installation": "overview/installation.md"
       - "Configuration": "overview/configuration.md"
       - "Usage": "overview/usage.md"
       - "Troubleshooting": "overview/troubleshooting.md"
-      - "FAQ": "overview/faq.md"
   - "Development":
       - "development/index.md"
       - "Development Environment": "development/devenv.md"

@@ -1,21 +1,17 @@
 
-# volumes:
-  # caddy_data:
-  # navidrome_data:
-
 services:
 
-  # caddy:
-  #   container_name: caddy
-  #   image: caddy:latest
-  #   restart: unless-stopped
-  #   read_only: true
-  #   volumes:
-  #     - "caddy_data:/data/rw"
-  #     - "./config/Caddyfile:/etc/caddy/Caddyfile:ro"
-  #   ports:
-  #     # - "80:80"
-  #     - "443:443"
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    restart: unless-stopped
+    read_only: true
+    volumes:
+      # - "caddy_data:/data:rw"
+      - "./config/Caddyfile:/etc/caddy/Caddyfile:ro"
+    ports:
+      # - "80:80"
+      - "443:443"
 
   navidrome:
     image: deluan/navidrome:latest
